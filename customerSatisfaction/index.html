@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>Customer Satisfaction</title>
+  
+  
+  
+      <link rel="stylesheet" href="css/style.css">
+
+  
+</head>
+
+<body>
+
+  <div>
+<h1 id="title">Customer Survey Form</h1>
+  <article>
+    <section id="form">
+      <p id="description">* = Required</p>
+      <form id="survey-form">
+        <label id="name-label" for="name">*Name:</label>
+        <input class="input" id="name" type="text" name="Name" placeholder="Enter your Name" required>
+        <label id="email-label" for="email">*Email:</label>
+        <input class="input" id="email" type="Email" name="email" placeholder="Enter your Email" required> 
+        <label id="number-label" for="number">*Age:</label>
+        <input class="input" id="number" type="number" name="Age" placeholder="Enter your Age" required min="18" max="30"> 
+        <label id="Studies-label" for="dropdown">*Current job status?</label>
+        <Select id="dropdown" name="JobStatus" required>
+        	<option disabled value selected>Select an option</option>
+        	<option value="EFT">Employed Full-time</option>  
+        	<option value="EPT">Employed Part-time</option> 
+        	<option value="UE">Unemployed</option> 
+        	<option value="RET">Retired</option>    
+        	<option value="STU">Student</option>
+          <option value="NR">Prefer not to Answer</option>
+        </Select>
+        <label class="align-top" id="paymentMethod-label" for="PaymentMethod">*Preferred payment method</label>
+        <div id="payment-radio">
+        	<input id="paymentMethod1" type="radio" name="PaymentMethod" value="CASH" required> 
+        	<label class="align-left" for="paymentMethod1">Cash</label>
+        	<input id="paymentMethod2" type="radio" name="PaymentMethod" value="CHK" required> 
+        	<label class="align-left" for="paymentMethod2">Check</label>
+        	<input id="paymentMethod3" type="radio" name="PaymentMethod" value="CC" required> 
+        	<label class="align-left" for="paymentMethod3">Debit/Credit card</label>
+        </div>
+        <label id="advertSource" class="align-top">How did you hear about us (check all that apply)?</label>
+        <div id="checkbox">
+          <input type="checkbox" name="advertsource1" value="RADIO"> <span>Radio</span>
+<input type="checkbox" name="advertsource2" value="TV"> <span>Television</span>
+          <input type="checkbox" name="advertsource3" value="INTERNET"> <span>Internet</span>
+          <input type="checkbox" name="advertsource4" value="Other"><span> Other</span>
+        </div>
+        <label class="align-top" id="comments-label" for="comments">Comments:</label>
+         <textarea id="comments" class="input-field" style="height:100px;resize:vertical;" name="comment" placeholder="Enter your comments here..."></textarea>
+        <div id="submitButton">
+          <input type="Submit" id="submit">
+        </div>
+      </form>
+    </section>
+  </article>
+    </div>
+  <script src='https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js'></script>
+
+  
+
+</body>
+
+</html>

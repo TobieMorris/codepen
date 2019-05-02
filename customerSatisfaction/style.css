@@ -1,0 +1,116 @@
+body{
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  max-width: 100%;
+}
+
+form{
+    display: grid;
+	  grid-row-gap: 25px;
+    align-items: center;
+    grid-template-columns: 25% auto;
+}
+
+form > label {
+  text-align: left;
+}
+
+h1{
+  padding-bottom:15px;
+  margin: 0;
+  padding-top: 15px;
+  Position: relative;
+  top: 5px;
+  text-align: center;
+}
+
+p{
+  color: #707574;
+  font-weight: bold;
+}
+
+article{
+  font-family: 'Roboto', serif; Times New Roman;
+	display: grid;
+	max-width: 600px;
+  text-align: center;
+  margin: 0 auto;
+  background: #e3edea;
+  padding: 20px 50px 30px 50px;
+  }
+
+.align-top{
+  align-self: start;
+}
+
+.align-left{
+	text-align: left;
+	margin-left: 5px;
+}
+
+#payment-radio{
+	display: grid;
+	grid-template-columns: 25px 1fr;
+	justify-items: start;
+	grid-row-gap: 5px;
+  }
+
+#dropdown{
+  width: 98%;
+  justify-self: End;
+  height: 28px;
+  border: 0 transparent solid;
+  border-radius: 5px;
+  background-color: #eaebed;
+  color:#464749;
+}
+
+#checkbox{
+  display: grid;
+  grid-template-columns: 30px 1fr;
+  justify-items: start;
+	grid-row-gap: 5px;
+}
+
+.input{
+  height: 25px;
+  width: 97%;
+  justify-self: End;
+  background-color: transparent;
+  plaheholder-color: gray;
+  border:0;
+  border-bottom: 2px solid white; 
+  color: black;
+  outline: none;
+}
+
+
+#submit{
+  margin-top: 20px;
+  width: 100px;
+  Color: black;
+  border: 1px solid white;
+  height: 30px;
+  border-radius: 5px;
+  background-color: #b3bcb9;
+  text-align: center;
+  margin-left: 200%;
+}
+#submit:hover{
+  background-color: white;
+  color: black;
+}
+
+#description{
+  text-align: left;
+  margin-bottom: 25px;
+}
+
+#comments{
+border-radius: 5px;
+}
+
+
+
