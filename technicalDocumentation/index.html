@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>Technical Documentation Page</title>
+  
+  
+  
+      <link rel="stylesheet" href="css/style.css">
+
+  
+</head>
+
+<body>
+
+  
+<nav id="navbar">
+  <header>Documenting Python</header>
+  <ul>
+    <a class="nav-link" href="#Introduction" rel="internal">
+      <li>Introduction</li>
+    </a>
+    <a class="nav-link" href="#Commenting_vs._Documenting" rel="internal">
+      <li>Commenting vs. Documenting </li>
+    </a>
+    <a class="nav-link" href="#Documenting_Using_Docstrings" rel="internal">
+      <li>Documenting Using Docstrings</li>
+    </a>
+    <a class="nav-link" href="#Documenting_Your_Python_Projects" rel="internal">
+      <li>Documenting Your Python Projects</li>
+    </a>
+     <a class="nav-link" href="#Where_Do_I_Start?" rel="internal">
+      <li>Where Do I Start?</li>
+    </a>
+  </ul>
+</nav>
+<main id="main-doc">
+  <section class="main-section" id="Introduction">
+    <header>Introduction</header>
+    <article>
+      <p>Hopefully, if you’re reading this tutorial, you already know the importance of documenting your code. </p>
+
+      <p>When you write code, you write it for two primary audiences: your users and your developers (including yourself). Both audiences are equally important. If you’re like me, you’ve probably opened up old codebases and wondered to yourself, “What in
+        the world was I thinking?” If you’re having a problem reading your own code, imagine what your users or other developers are experiencing when they’re trying to use or contribute to your code.</p>
+
+      <p>Conversely, I’m sure you’ve run into a situation where you wanted to do something in Python and found what looks like a great library that can get the job done. However, when you start using the library, you look for examples, write-ups, or even
+        official documentation on how to do something specific and can’t immediately find the solution.</p>
+
+      <p>After searching, you come to realize that the documentation is lacking or even worse, missing entirely. This is a frustrating feeling that deters you from using the library, no matter how great or efficient the code is.</p>
+
+      <p>In this guide, you’ll learn from the ground up how to properly document your Python code from the smallest of scripts to the largest of Python projects to help prevent your users from ever feeling too frustrated to use or contribute to your project.</p>
+
+      </artice>
+  </section>
+  <section class="main-section" id="Commenting_vs._Documenting">
+    <header>Commenting vs. Documenting </header>
+    <article>
+      <p>Before we can go into how to document your Python code, we need to distinguish documenting from commenting.</p>
+
+      <p>In general, commenting is describing your code to/for developers. The intended main audience is the maintainers and developers of the Python code. In conjunction with well-written code, comments help to guide the reader to better understand your
+        code and its purpose and design.</p>
+
+      <p>Documenting code is describing its use and functionality to your users. While it may be helpful in the development process, the main intended audience is the users. The following section describes how and when to comment your code.</p>
+
+    <H2>Basics of Commenting Code</H2>
+    <article>
+      <p>Comments are created in Python using the pound sign (#) and should be brief statements no longer than a few sentences. Here’s a simple example:</p>
+<p>
+<code>def hello_world():
+  # A simple comment preceding a simple print statement
+  print("Hello World")</code>
+ </p>
+      
+      <p>According to PEP 8, comments should have a maximum length of 72 characters. This is true even if your project changes the max line length to be greater than the recommended 80 characters. If a comment is going to be greater than the comment char limit, using multiple lines for the comment is appropriate:</p>
+ <p>
+ <code>def hello_long_world():
+  # A very long statement that just goes on and on and on and on and
+  # never ends until after it's reached the 80 char limit
+  print("Hellooooooooooooooooooooooooooooooooooooooooooooooooooooooo World")</code>
+      </p>
+      <p>
+        Commenting your code serves multiple purposes, including:
+<ul>
+  <li>Planning and Reviewing: When you are developing new portions of your code, it may be appropriate to first use comments as a way of planning or outlining that section of code. Remember to remove these comments once the actual coding has been implemented and reviewed/tested:
+  <code># First step
+# Second step
+# Third step</code>
+  </li>
+  <li>Code Description: Comments can be used to explain the intent of specific sections of code:
+  <code># Attempt a connection based on previous settings. If unsuccessful,
+# prompt user for new settings.</code>
+  </li>
+  <li>Algorithmic Description: When algorithms are used, especially complicated ones, it can be useful to explain how the algorithm works or how it’s implemented within your code. It may also be appropriate to describe why a specific algorithm was selected over another.
+    <code># Using quick sort for performance gains</code>
+  </li>
+  <li>Tagging: The use of tagging can be used to label specific sections of code where known issues or areas of improvement are located. Some examples are: BUG, FIXME, and TODO.
+    <code># TODO: Add condition for when val is None</code>
+  </li>
+</ul>
+ </p>
+    
+   <p>Comments to your code should be kept brief and focused. Avoid using long comments when possible. </p>
+    <p>
+      <ol>
+       <li>Keep comments as close to the code being described as possible. Comments that aren’t near their describing code are frustrating to the reader and easily missed when updates are made.</li>
+        <li>Don’t use complex formatting (such as tables or ASCII figures). Complex formatting leads to distracting content and can be difficult to maintain over time.</li>
+        <li>Don’t include redundant information. Assume the reader of the code has a basic understanding of programming principles and language syntax.</li>
+        <li>Design your code to comment itself. The easiest way to understand code is by reading it. When you design your code using clear, easy-to-understand concepts, the reader will be able to quickly conceptualize your intent.</li>
+    </ol>
+    </p>
+  <p>Remember that comments are designed for the reader, including yourself, to help guide them in understanding the purpose and design of the software.</p>
+    </article>
+  </section>
+  <section class="main-section" id="Documenting_Using_Docstrings">
+    <header>Documenting Using Docstrings</header>
+    <article>
+      Now that we’ve learned about commenting, let’s take a deep dive into documenting a Python code base. In this section, you’ll learn about docstrings and how to use them for documentation. This section is further divided into the following sub-sections:
+      <p><ol>
+      <li>Docstrings Background: A background on how docstrings work internally within Python</li>
+      <li>Docstring Types: The various docstring “types” (function, class, class method, module, package, and script)</li>
+      <li>Docstring Formats: The different docstring “formats” (Google, NumPy/SciPy, reStructured Text, and Epytext)</li>
+      </ol></p>
+    <p><h2>Docstrings Background</h2>
+    Documenting your Python code is all centered on docstrings. These are built-in strings that, when configured correctly, can help your users and yourself with your project’s documentation. Along with docstrings, Python also has the built-in function help() that prints out the objects docstring to the console. Here’s a quick example:
+    <code>>>> help(str)
+Help on class str in module builtins:
+
+class str(object)
+ |  str(object='') -> str
+ |  str(bytes_or_buffer[, encoding[, errors]]) -> str
+ |
+ |  Create a new string object from the given object. If encoding or
+ |  errors are specified, then the object must expose a data buffer
+ |  that will be decoded using the given encoding and error handler.
+ |  Otherwise, returns the result of object.__str__() (if defined)
+ |  or repr(object).
+ |  encoding defaults to sys.getdefaultencoding().
+ |  errors defaults to 'strict'.
+ # Truncated for readability</code></p>
+<p>
+    How is this output generated? Since everything in Python is an object, you can examine the directory of the object using the dir() command. Let’s do that and see what find:
+  <code>>>> dir(str)
+['__add__', ..., '__doc__', ..., 'zfill'] # Truncated for readability</code>
+    </p>
+<p>Within that directory output, there’s an interesting property, __doc__. If you examine that property, you’ll discover this:
+<code>>>> print(str.__doc__)
+str(object='') -> str
+str(bytes_or_buffer[, encoding[, errors]]) -> str
+
+Create a new string object from the given object. If encoding or
+errors are specified, then the object must expose a data buffer
+that will be decoded using the given encoding and error handler.
+Otherwise, returns the result of object.__str__() (if defined)
+or repr(object).
+encoding defaults to sys.getdefaultencoding().
+errors defaults to 'strict'.</code>
+</p>
+<h2>Docstring Types</h2>
+<p>ocstring conventions are described within PEP 257. Their purpose is to provide your users with a brief overview of the object. They should be kept concise enough to be easy to maintain but still be elaborate enough for new users to understand their purpose and how to use the documented object.
+
+In all cases, the docstrings should use the triple-double quote (""") string format. This should be done whether the docstring is multi-lined or not. At a bare minimum, a docstring should be a quick summary of whatever is it you’re describing and should be contained within a single line.</p>
+
+<h2>Class Docstrings</h2>
+<p>Class Docstrings are created for the class itself, as well as any class methods. The docstrings are placed immediately following the class or class method indented by one level.</p>
+<p>Class docstrings should contain the following information:
+<ul>
+  <li>A brief summary of its purpose and behavior</li>
+  <li>Any public methods, along with a brief description</li>
+  <li>Any class properties (attributes)</li>
+  <li>Anything related to the interface for subclassers, if the class is intended to be subclassed</li>
+</ul>
+    </article>
+  </section>
+<section class="main-section" id="Documenting_Your_Python_Projects">
+    <header>Documenting Your Python Projects</header>
+  <article>
+  <p>Python projects come in all sorts of shapes, sizes, and purposes. The way you document your project should suit your specific situation. Keep in mind who the users of your project are going to be and adapt to their needs. Depending on the project type, certain aspects of documentation are recommended. The general layout of the project and its documentation should be as follows:</p>
+  <p><code>project_root/
+│
+├── project/  # Project source code
+├── docs/
+├── README
+├── HOW_TO_CONTRIBUTE
+├── CODE_OF_CONDUCT
+├── examples.py</code></p>
+  <p>Projects can be generally subdivided into three major types: Private, Shared, and Public/Open Source.</p>
+  <h2>Private Projects</h2>
+  <p>Private projects are projects intended for personal use only and generally aren’t shared with other users or developers. Documentation can be pretty light on these types of projects. There are some recommended parts to add as needed: </p>
+  <ul>
+    <li>Readme: A brief summary of the project and its purpose. Include any special requirements for installation or operating the project.</li>
+    <li>examples.py: A Python script file that gives simple examples of how to use the project.</li>
+  </ul>
+  <p>Remember, even though private projects are intended for you personally, you are also considered a user. Think about anything that may be confusing to you down the road and make sure to capture those in either comments, docstrings, or the readme.</p>
+  
+  <h2>Shared Projects</h2>
+  <p>Shared projects are projects in which you collaborate with a few other people in the development and/or use of the project. The “customer” or user of the project continues to be yourself and those limited few that use the project as well.
+
+Documentation should be a little more rigorous than it needs to be for a private project, mainly to help onboard new members to the project or alert contributors/users of new changes to the project. Some of the recommended parts to add to the project are the following:</p>
+  <ul> 
+  <li>Readme: A brief summary of the project and its purpose. Include any special requirements for installing or operating the project. Additionally, add any major changes since the previous version.</li>
+    <li>examples.py: A Python script file that gives simple examples of how to use the projects.</li>
+    <li>How to Contribute: This should include how new contributors to the project can start contributing.</li>
+  </ul>
+    </article>
+</section>
+
+<section class="main-section" id="Where_Do_I_Start?">
+    <header>Where Do I Start?</header>
+  <p>The documentation of projects have a simple progression:</p>
+  <p>
+    <ol> 
+      <li>No Documentation</li>
+      <li>Some Documentation</li>
+      <li>Complete Documentation</li>
+      <li>Good Documentation</li>
+      <li>Great Documentation</li>
+  </ol>
+  </p>
+  <p>If you’re at a loss about where to go next with your documentation, look at where your project is now in relation to the progression above. Do you have any documentation? If not, then start there. If you have some documentation but are missing some of the key project files, get started by adding those.</p>
+  <p>In the end, don’t get discouraged or overwhelmed by the amount of work required for documenting code. Once you get started documenting your code, it becomes easier to keep going. Feel free to comment if you have questions or reach out to the Real Python Team on social media, and we’ll help.</p>
+  <article>
+    
+  </article>
+</section>
+  
+</main>
+  <script src='https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js'></script>
+
+  
+
+</body>
+
+</html>
