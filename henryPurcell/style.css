@@ -1,0 +1,29 @@
+body {
+  font-family: 'Roboto', serif; Times New Roman;
+  background-color: #9ca4a2;
+  color: black;
+}
+h1 {
+  font-size: 100px;
+  margin-bottom: 5px;
+}
+h5 {
+  font-size: 50px;
+}
+img{
+  max-width: 100%; 
+  display: block; 
+  height: auto;
+  margin: auto;
+}
+p {
+  font-size: 25px;
+  text-align: left;
+  margin: 55px;
+}
+a {
+  color: #595e5c;
+}
+a:hover {
+  color: #2c2f2e;
+}
