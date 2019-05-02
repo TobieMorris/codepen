@@ -1,0 +1,139 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto");
+
+html,
+body {
+  font-family: "Roboto", sans-serif;
+  text-align: center;
+  background: #c9d3d0;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.intro {
+  top: 0;
+  background: #e0ebe8;
+  min-height: 55vh;
+  padding-top: 45vh;
+}
+
+.intro p {
+  color: 434645;
+}
+
+nav ul {
+  text-align: right;
+  position: fixed;
+  width: 100%;
+  background-color: #ebe8e0;
+}
+nav ul li {
+  display: inline-block;
+  margin: 55px;
+  margin-bottom: 0;
+  margin-top: 0;
+}
+nav ul li a {
+  display: block;
+  color: #434645;
+  text-decoration: none;
+  text-align: center;
+  padding: 14px 16px;
+}
+
+nav ul li a:hover {
+  color: #595e5c;
+  background-color: #c9d3d0;
+}
+
+.work {
+  padding-top: 60px;
+  margin-top: -60px;
+  margin-bottom: 25%;
+}
+
+.work .work-header {
+  margin-top: 50px;
+  font-size: 2.5em;
+  color: #434645;
+  font-weight: normal;
+}
+
+.project {
+  text-decoration: none;
+  color: #434645;
+
+  overflow: hidden;
+  height: 220px;
+  width: 280px;
+  font-size: 1.5em;
+  margin: 40px 10px;
+}
+.project:hover {
+  color: #ebe0e3;
+}
+
+.project-title {
+  font-weight: bold;
+}
+
+@media only screen and (max-width: 500px) {
+  nav ul {
+    text-align: center;
+  }
+  nav ul li {
+    margin: 20px;
+  }
+  .project {
+    margin: 40px 0;
+  }
+}
+
+.contact {
+  color: #595e5c;
+  background: #b3bcb9;
+  /*padding-bottom: 290px; */
+  padding-bottom: 20%;
+  font-size: 2em;
+}
+
+.header {
+  padding: 160px 0 110px;
+}
+
+.contact-details {
+  display: inline-block;
+  font-weight: bold;
+  text-align: left;
+  list-style-type: none;
+
+  height: 300px;
+  line-height: 100px;
+
+  color: #9ca4a2;
+  text-decoration: none;
+}
+
+#profile-link {
+  color: #434645;
+  font-size: 1.8em;
+}
+#profile-link:hover {
+  color: #ebe0e3;
+}
+
+@media only screen and (max-width: 367px) {
+  /*    #contact{
+    min-height:1100px;
+  } */
+  .contact-details {
+    border: 2px solid #90c695;
+    border-radius: 0;
+    width: 90px;
+    height: 20px;
+    padding: 10px;
+    line-height: normal;
+  }
+}
